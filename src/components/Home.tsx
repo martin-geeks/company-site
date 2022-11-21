@@ -43,7 +43,7 @@ export default function Home() {
                 {slides.map((slide,index) => (
                     <>
                 
-                <SwiperSlide className='bg-gradient-to-r from-blue-600 to-blue-900 w-[100%] h-[200px] ' style={{backgroundImage:`url(${slide.image})`,backgroundSize:'cover',height:'300px'}}>
+                <SwiperSlide className='bg-gradient-to-r from-blue-600 to-blue-900 w-[100%] h-[200px] ' style={{backgroundImage:`url(${slide.image})`,backgroundSize:'cover',height:'400px'}}>
                     <h1 className='text-center my-2 border-b-2 w-[200px] py-2 mx-auto font-bold uppercase'>{slide.title}</h1>
                     <p data-aos='slide-up' className='mt-10 text-center border-3 w-40 mx-auto py-3 '>
                         {slide.description}
