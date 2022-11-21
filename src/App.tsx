@@ -1,10 +1,10 @@
 import React, { useEffect ,useRef,useState,Suspense} from 'react';
 import {Link,Routes,Route} from 'react-router-dom';
 import {CgMenu} from 'react-icons/cg';
-import {FaTimes} from 'react-icons/fa';
+import {FaTimes, FaVk} from 'react-icons/fa';
 import {MdSchool} from 'react-icons/md';
 import {FiSun} from 'react-icons/fi';
-import {BsFillMoonFill} from 'react-icons/bs';
+import {BsBuilding, BsFacebook, BsFillMoonFill, BsInstagram, BsSkype, BsTwitter, BsWhatsapp, BsYoutube} from 'react-icons/bs';
 import Aos from 'aos';
 import 'aos/dist/aos.css';
 import './main.css';
@@ -53,7 +53,7 @@ function App() {
   }, []);
 
   return (
-    <div className='scrollbar-hide'>
+    <div className='scrollbar-hide dark:bg-black dark:text-white '>
       <header className="">
         {isLogged ?
          null
@@ -65,14 +65,14 @@ function App() {
           }
         <div>
           <div className='flex justify-between'>
-            <div className='dark:bg-slate-900 w-full py-2 border-b flex justify-between '>
-              <h1 className='text-xl text-orange-500 font-bold flex '><MdSchool className='my-1 mx-1'/>Company Name</h1>
+            <div className='bg-white dark:bg-black w-full py-2 border-b border-b-gray-300 dark:border-b-slate-900 flex justify-between '>
+              <h1 className='text-xl text-orange-500 font-bold flex '><BsBuilding className='my-1 mx-1'/>Company Name</h1>
               <div className='hidden md:block'>
                 <ul className='flex'>
-                  <li className='mx-2'><a href='/' className='text-gray-500 hover:text-orange-500'>Home</a></li>
-                  <li className='mx-2'><a href='/' className='text-gray-500 hover:text-orange-500'>About</a></li>
-                  <li className='mx-2'><a href='/' className='text-gray-500 hover:text-orange-500'>Services</a></li>
-                  <li className='mx-2'><a href='/' className='text-gray-500 hover:text-orange-500'>Contact</a></li>
+                  <li className='mx-2'><a href='#home' className='text-gray-500 hover:text-orange-500'>Home</a></li>
+                  <li className='mx-2'><a href='#about' className='text-gray-500 hover:text-orange-500'>About</a></li>
+                  <li className='mx-2'><a href='#services' className='text-gray-500 hover:text-orange-500'>Services</a></li>
+                  <li className='mx-2'><a href='#contact' className='text-gray-500 hover:text-orange-500'>Contact</a></li>
                 </ul>
               </div>
               <div className='md:hidden'>
@@ -84,17 +84,18 @@ function App() {
             </div>
           </div>
         </div>
-        <nav ref={navbar} className='fixed w-[70%] h-[100vh] z-[20] top-[0] shadow-xl bg-white md:hidden ml-[-100%] border-r dark:bg-gray-900 dark:text-white dark:border-r-slate-700 transition-all'>
+        <nav ref={navbar} className='fixed w-[70%] h-[100vh] z-[20] top-[0] shadow-xl bg-white md:hidden ml-[-100%] border-r dark:bg-black dark:text-white dark:border-r-slate-700 transition-all'>
           <div className='flex justify-end'>
             <button className='btn btn-sm hover:bg-gray-300 border-none'>
               
             </button>
             </div>
           <ul>
-            <li className='btn w-[80%] text-left normal-case hover:bg-orange-500 hover:text-white border-none mx-auto rounded-none'>Home</li>
-            <li className='btn w-[80%] text-left normal-case hover:bg-orange-500 hover:text-white border-none mx-auto rounded-none'>About</li>
-            <li className='btn w-[80%] text-left normal-case hover:bg-orange-500 hover:text-white border-none mx-auto rounded-none'>Services</li>
-            <li className='btn w-[80%] text-left normal-case hover:bg-orange-500 hover:text-white border-none mx-auto rounded-none'>Contact</li>
+            
+            <li className='mx-2'><a href='#home' className='btn w-[80%] text-left normal-case hover:bg-orange-500 hover:text-white border-none mx-auto rounded-none'>Home</a></li>
+            <li className=''><a href='#about' className='btn w-[80%] text-left normal-case hover:bg-orange-500 hover:text-white border-none mx-auto rounded-none'>About</a></li>
+            <li className='mx-2'><a href='#services' className='btn w-[80%] text-left normal-case hover:bg-orange-500 hover:text-white border-none mx-auto rounded-none'>Services</a></li>
+            <li className='mx-2'><a href='#contact' className='btn w-[80%] text-left normal-case hover:bg-orange-500 hover:text-white border-none mx-auto rounded-none'>Contact</a></li>
 
           </ul>
         </nav>
@@ -105,48 +106,48 @@ function App() {
           <Route path='/' element={<Home />} />
         </Routes>
         </Suspense>
-        <div className='bg-black text-white '>
-                    <h1 className='font-light text-xl uppercase py-3'>Newsletter Subscription</h1>
-                    <p className='text-[11pt] font-light text-gray-300'>
-                    Sign up for Belai Express updates to receive information about new arrivals, future events and specials.
+        <div className='bg-black text-white dark:bg-gray-900'>
+                    <h1 className='font-light text-xl uppercase py-3 text-center'>Newsletter Subscription</h1>
+                    <p className='text-[11pt] font-light text-gray-300 text-center'>
+                    Sign up for Company updates to receive information about new arrivals, future events and specials.
                     </p>
                     <form className='flex flex-col md:flex-row w-[90%] mx-auto'>
-                        <input type='email' className='bg-black outline outline-gray-400 py-1 my-2 text-center font-light' placeholder='me@example.com' />
+                        <input type='email' className='bg-white outline-none py-1 my-2 text-center text-black' placeholder='me@example.com' />
                         <button className='btn btn-sm py-1 my-2 rounded-none text-gray-300 font-light'>Subscribe!</button>
                     </form>
-                    <p className='text-gray-400 font-light text-[11pt] my-3'>
-                        © 2022 Belai Express . All Rights Reserved. Ecommerce Software by Belai Express .Inc.
+                    <p className='text-gray-400 font-light text-[11pt] my-3  text-center'>
+                        © 2022 Company Name . All Rights Reserved. Ecommerce Software by Company Name .Inc.
                     </p>
                     <div>
                         <ul className='flex justify-center text-[12pt] py-3'>
                             <li className='mx-[5px] text-[15pt]'>
-                                <i className='fab fa-twitter' />
+                                <BsTwitter />
                             </li>
                              <li className='mx-[10px] text-[15pt]'>
-                                <i className='fab fa-facebook' />
+                                <BsFacebook  />
                             </li>
                             <li className='mx-[2.5px] text-[15pt]'>
-                                <i className='fab fa-whatsapp' />
-                            </li>
-                             <li className='mx-[10px] text-[15pt]'>
-                                <i className='fab fa-pinterest' />
+                                <BsWhatsapp />
                             </li>
                              <li className='mx-[2.5px] text-[15pt]'>
-                                <i className='fab fa-vk' />
+                                <i className='fab fa-pinterest' />
                             </li>
-                            <li className='mx-[10px] text-[15pt]'>
-                                <i className='fab fa-youtube' />
+                             <li className='mx-[5px] text-[15pt]'>
+                                <FaVk />
+                            </li>
+                            <li className='mx-[5px] text-[15pt]'>
+                                <BsYoutube/>
                             </li>
                             <li className='mx-[2.5px] text-[15pt]'>
-                                <i className='fab fa-instagram' />
+                                <BsInstagram />
                             </li>
                             <li className='mx-[10px] text-[15pt]'>
-                                <i className='fab fa-skype' />
+                                <BsSkype />
                             </li>
                         </ul>
                         
                     </div>
-                    <button className='font-light btn w-full bg-gray-400 text-black border-none rounded-none normal-case'><i className='fal fa-arrow-up' /> Top</button>
+                    <button className='font-light btn w-full bg-gray-400 text-black border-none rounded-none normal-case hidden'><i className='fal fa-arrow-up' /> Top</button>
                 </div>
       </div>
 

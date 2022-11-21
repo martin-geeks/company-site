@@ -5,8 +5,10 @@ import "swiper/css";
 import "swiper/css/effect-coverflow";
 import "swiper/css/effect-fade";
 import "swiper/css/pagination";
-import { BsChevronCompactLeft, BsChevronCompactRight } from 'react-icons/bs';
+import { BsBuilding, BsChevronCompactLeft, BsChevronCompactRight, BsMapFill } from 'react-icons/bs';
 import { FaCogs, FaUser } from 'react-icons/fa';
+import { MdLocationCity } from 'react-icons/md';
+import { FiEye } from 'react-icons/fi';
 
 
 interface Slide {
@@ -25,6 +27,7 @@ export default function Home() {
     return (
         <>
             <Swiper
+            id='home'
                 navigation={{
                     nextEl: '.swiper-button-next',
                     prevEl: '.swiper-button-prev',
@@ -87,7 +90,45 @@ export default function Home() {
                         Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.
                     </p>
                 </div>
-                
+                <div data-aos='slide-up' id='about' className=' my-2 md:col-span-5'>
+                    <h1 className='text-center uppercase border-b-2 border-b-red-600 w-40 mx-auto py-2 my-2'>About</h1>
+                    <div className='carousel w-full md:grid md:grid-cols-4'>
+                        <div className='carousel-item w-[80%] h-[200px] rounded-box mx-30 text-center flex flex-col shadow-xl bg-sky-900 py-2 text-white'>
+                            <h1 className='text-center w-full font-bold text-white text-sm uppercase'><BsBuilding className='text-center w-full text-xl'/> Establishment</h1>
+                            <p className='w-full text-sm'>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.
+                            </p>
+                        </div>
+                        <div className='carousel-item w-[80%] h-[200px] rounded-box mx-30  text-center flex flex-col shadow-xl bg-slate-900 mx-5 text-white py-2'>
+                            <h1 className='text-center w-full font-bold text-white text-sm uppercase '><BsMapFill className='text-center w-full text-xl'/> Sites</h1>
+                            <p className='w-full text-sm'>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.
+                            </p>
+                        </div>
+                        <div className='carousel-item w-[80%] h-[200px] rounded-box mx-30  text-center flex flex-col shadow-xl bg-red-900 mx-5 text-white py-2'>
+                            <h1 className='text-center w-full font-bold text-white text-sm uppercase '><FaCogs className='text-center w-full text-xl'/>Operations</h1>
+                            <p className='w-full text-sm'>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.
+                            </p>
+                        </div>
+                        <div className='carousel-item w-[80%] h-[200px] rounded-box mx-30  text-center flex flex-col shadow-xl bg-purple-900 mx-5 text-white py-2'>
+                            <h1 className='text-center w-full font-bold text-white text-sm uppercase '><FiEye className='text-center w-full text-xl'/>Vision & Mission</h1>
+                            <p className='w-full text-sm'>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div data-aos='slide-up' id='contact' className=' my-2 md:col-span-5 border rounded-box bg-black text-white p-5 md:bg-white md:text-black'>
+                    <h1 className='text-center uppercase border-b-2 border-b-green-600 w-40 mx-auto py-2'>Contact</h1>
+                    <ul className='p-2 text-center'>
+                        <li>Email: <a href='mailto:mycompany@example.com'>mycompany@example</a></li>
+                        <li>Headquaters: Company Building, Lusaka, Zambia</li>
+                        <li>Sub Office: Company Building 1, Lusaka, Zambia</li>
+                        <li>Sub Office 2: Company Building 2, Lusaka, Zambia</li>
+
+                    </ul>
+                </div>
             </div>    
         </>
     );
